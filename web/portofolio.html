@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Nature - Noir & Or Dynamique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de photographie nature : animaux, coucher de soleil et nuit.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <style>
+    body { font-family: "Raleway", sans-serif; margin: 0; background: #0d0d0d; color: #d4af37; overflow-x: hidden; }
+    .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/soleil.jpg') center/cover no-repeat; min-height: 500px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: fadeIn 2s ease; }
+    .hero h1 { font-size: 60px; margin: 0; color: #d4af37; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); animation: zoomIn 1.5s ease; }
+    .hero p { font-size: 22px; margin: 15px 0 30px; color: #f5f5f5; opacity: 0.9; }
+    .hero a.button { background: #d4af37; color: #0d0d0d; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: background 0.4s, transform 0.3s; }
+    .hero a.button:hover { background: #bfa334; transform: scale(1.05); box-shadow: 0 0 20px #d4af37; }
+
+    .filter-buttons { text-align: center; margin: 50px 0 30px; }
+    .filter-buttons button { background: none; border: 2px solid #d4af37; color: #d4af37; padding: 10px 25px; margin: 5px; cursor: pointer; border-radius: 25px; font-weight: bold; transition: all 0.3s ease; }
+    .filter-buttons button:hover, .filter-buttons button.active { background: #d4af37; color: #0d0d0d; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; padding: 0 20px 50px; }
+    .card { background: #1a1a1a; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.7); transition: transform 0.4s, box-shadow 0.4s; transform: translateY(20px); opacity: 0; }
+    .card img { width: 100%; display: block; filter: grayscale(20%) brightness(0.9); transition: filter 0.3s; }
+    .card:hover img { filter: grayscale(0%) brightness(1); }
+    .card .caption { padding: 20px; }
+    .card .caption h3 { margin: 0 0 10px; color: #d4af37; }
+    .card .caption p { margin: 0; color: #e0e0e0; font-size: 15px; }
+
+    footer { text-align: center; background: #1a1a1a; color: #d4af37; padding: 30px 20px; margin-top: 50px; animation: fadeIn 2s ease; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Portofolio</h1>
+  <p>Animaux • Soleil couchant • Nuit</p>
+  <a href="#contact" class="button">Contactez-moi</a>
+</header>
+
+<section class="portfolio" id="portfolio">
+  <div class="filter-buttons">
+    <button class="active" onclick="filterSelection('all', this)">Tout</button>
+    <button onclick="filterSelection('animal', this)">Animal</button>
+    <button onclick="filterSelection('sunset', this)">Soleil couchant</button>
+    <button onclick="filterSelection('night', this)">Nuit</button>
+  </div>
+
+  <div class="grid">
+    <!-- Carte dog2 -->
+    <div class="card animal" data-aos="fade-up">
+      <img src="Images/dog2.jpg" alt="Chien 1">
+      <div class="caption">
+        <h3>Pose chien</h3>
+        <p>Fait le 5/07/25 retouché, prise compliquée car il bougeait beaucoup.</p>
+      </div>
+    </div>
+
+    <!-- Carte dog1 -->
+    <div class="card animal" data-aos="fade-up" data-aos-delay="100">
+      <img src="Images/dog1.jpg" alt="Chien 2">
+      <div class="caption">
+        <h3>Chien blanc</h3>
+        <p>Fait le 5/07/25 retouché, prise compliquée car il bougeait beaucoup.</p>
+      </div>
+    </div>
+
+    <!-- Nouvelle carte dog12 -->
+    <div class="card animal" data-aos="fade-up" data-aos-delay="150">
+      <img src="Images/d1et2.png" alt="Chien 3">
+      <div class="caption">
+        <h3>Les 2 ensemble</h3>
+        <p>Tient a préciser que c est chien son pas a moi mais je l ai ai pris en photo parceuque ils osotn beau</p>
+      </div>
+    </div>
+
+    <!-- Carte sunset soleil -->
+    <div class="card sunset" data-aos="fade-up" data-aos-delay="200">
+      <img src="images/soleil.jpg" alt="Soleil couchant">
+      <div class="caption">
+        <h3>Coucher retouché</h3>
+        <p>Retouche très simple, rien de magique.</p>
+      </div>
+    </div>
+
+    <!-- Carte sunset soleil2 -->
+    <div class="card sunset" data-aos="fade-up" data-aos-delay="300">
+      <img src="Images/soleil2.jpg" alt="Coucher de soleil 2">
+      <div class="caption">
+        <h3>Nuit paisible</h3>
+        <p>De même.</p>
+      </div>
+    </div>
+
+    <!-- Carte sunset soir -->
+    <div class="card sunset" data-aos="fade-up" data-aos-delay="400">
+      <img src="Images/soir.jpg" alt="Soir">
+      <div class="caption">
+        <h3>Fin de journée</h3>
+        <p>Lumière chaude sur le ciel au crépuscule.</p>
+      </div>
+    </div>
+
+    <!-- Carte night lacté -->
+    <div class="card night" data-aos="fade-up" data-aos-delay="500">
+      <img src="Images/lacté.jpg" alt="Voie lactée">
+      <div class="caption">
+        <h3>Voie lactée</h3>
+        <p>Ciel nocturne illuminé par la voie lactée. Nan en fait jsp du tout, j'ai retouché le ciel, y avait pas autant d'étoiles à cause de la pollution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Nature Vision - Portfolio
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({ duration: 1000, once: true });
+
+function filterSelection(category, btn) {
+  const cards = document.querySelectorAll('.card');
+  const buttons = document.querySelectorAll('.filter-buttons button');
+  buttons.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  if (category === 'all') {
+    cards.forEach(card => card.style.display = 'block');
+  } else {
+    cards.forEach(card => {
+      card.style.display = card.classList.contains(category) ? 'block' : 'none';
+    });
+  }
+}
+filterSelection('all', document.querySelector('.filter-buttons button'));
+</script>
+
+</body>
+</html>
